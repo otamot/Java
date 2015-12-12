@@ -2,7 +2,9 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
-class Rambda2AfterRambda2{
+//List内の要素を全件表示。
+//メソッド参照使用。
+class Rambda2AfterMethodReference{
 	public static void main(String[] args){
 		List<String> cities = new ArrayList<String>();
 		cities.add("京都");

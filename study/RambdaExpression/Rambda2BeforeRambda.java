@@ -2,6 +2,8 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
+//List内の要素を全件表示。
+//ラムダ式を使う前。
 class Rambda2BeforeRambda{
 	public static void main(String[] args){
 		List<String> cities = new ArrayList<String>();
