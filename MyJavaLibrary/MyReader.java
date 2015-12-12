@@ -9,7 +9,7 @@ import java.io.UnsupportedEncodingException;
 * @author YutaTomomatsu
 */
 public class MyReader{
-	private static BufferedReader br;
+	private BufferedReader br;
 
 	/**
 	* コンストラクタ
