@@ -12,7 +12,7 @@
 
 ### Predicate\<T\>
 * Tからbooleanへの単一引数関数
-* boolean test<T t>メソッドを持つ。
+* boolean test(T t)メソッドを持つ。
 
 ### Supplier\<R\>
 * Rへの引数なし関数。
