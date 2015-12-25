@@ -64,3 +64,28 @@ public class Task implements Callable<String> {
 }
 ```
 
+
+### Taskクラス
+まず、Taskクラス。
+ここには並列化したい処理を書いていく。
+その際に、Callable<V>を実装する必要がある。
+<V>はジェネリクスで、並列化した処理の結果を返す時の型を指定できる。
+
+``` java
+class Task implements Callable<Void>{} //結果を返さない処理を並列化するとき
+class Task implements Callable<Double>{} //Double型の結果を返したい時
+```
+
+Callableインターフェースは以下のメソッドを実装する必要がある。
+
+``` java
+V call() throws Exception
+```
+
+このcallメソッドは実際に並列化したい処理を記す。
+今回は1秒sleepしてtaskNumを返すという単純なものとした。
+
+
+
+
+### Mainクラス
