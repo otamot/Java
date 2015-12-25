@@ -100,7 +100,7 @@ taskの開始メッセージの出力、1秒スリープ、タスク終了メッ
 
 
 このようにinterface Callable\<V\>をimplementsすることによって、taskを簡単に実装できる。
-Callableではメソッドで処理をし、値を返し、Errorをすろーすることができる。
+Callableではメソッドで処理をし、値を返し、例外をスローすることができる。
 
 Runnableインターフェースをimplementsすることでも同じようなことができるが、処理の結果を返すことが出来なかったり(void)、例外をスローすることができない。
 
@@ -108,10 +108,86 @@ Runnableインターフェースをimplementsすることでも同じような�
 Mainクラスでは、スレッドの発行、taskの実行、スレッドの終了、結果の出力まで一連の動作を記述する。
 
 
-#### Executors
+#### ExecutorService
 * newFixedThreadPool
 * newSingleThreadExecutor
 * newFixedScheduledExecutor
 * newSingleScheduledExecutor
 
 
+
+
+
+
+
+
+
+
+### 実行結果
+* threadNum = 4のとき
+```
+task0 is start
+task2 is start
+task3 is start
+task1 is start
+task3 is end
+task1 is end
+task2 is end
+task0 is end
+task5 is start
+task7 is start
+task4 is start
+task6 is start
+task7 is end
+task6 is end
+task4 is end
+task5 is end
+task9 is start
+task8 is start
+task9 is end
+task8 is end
+[0]
+[1]
+[2]
+[3]
+[4]
+[5]
+[6]
+[7]
+[8]
+[9]
+```
+
+* threadNum = 1のとき
+```
+task0 is start
+task0 is end
+task1 is start
+task1 is end
+task2 is start
+task2 is end
+task3 is start
+task3 is end
+task4 is start
+task4 is end
+task5 is start
+task5 is end
+task6 is start
+task6 is end
+task7 is start
+task7 is end
+task8 is start
+task8 is end
+task9 is start
+task9 is end
+[0]
+[1]
+[2]
+[3]
+[4]
+[5]
+[6]
+[7]
+[8]
+[9]
+```
